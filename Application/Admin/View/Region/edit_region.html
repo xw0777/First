@@ -1,0 +1,58 @@
+<include file="Common/header"/>
+<body>
+<article class="page-container">
+    <form action="" method="post" class="form form-horizontal" id="form-admin-role-add">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">* </span>名称：</label>
+            <div class="formControls col-xs-7 col-sm-8">
+                <input type="text" value="{$info.name}" class="input-text" placeholder="请输入地区名称，最大30个字符" id="name">
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                <button type="button" class="btn btn-success radius" id="admin-role-save" name="admin-role-save"><i class="icon-ok"></i> 确定</button>
+            </div>
+        </div>
+
+    </form>
+</article>
+<include file="Common/js"/>
+<script type="text/javascript">
+    $(function(){
+        var id = "{$info.id}";
+        $('#admin-role-save').click(function () {
+
+            var name = $('#name').val();
+            if(name.length < 2 || name.length > 30)
+            {
+                layer.alert('地区名称长度应在2-30之间', {icon: 5});
+                return false;
+            }
+            layer.load(2);
+            $.post('',{name:name,id:id}, function (e) {
+                layer.closeAll('loading');
+                if(e.status)
+                {
+                    var ls = window.parent.document.getElementsByClassName('tree-row');
+                    for (var j=0;j<ls.length;j++)
+                    {
+                        var tmp = ls[j];
+                        if(tmp.getAttribute('data-id') == id)
+                        {
+                            var t = $(tmp).children().eq(0);
+                            t.html(name);
+                            t.parent().attr('data-name',name);
+                        }
+                    }
+                    var index = parent.layer.getFrameIndex(window.name);
+                    parent.layer.close(index)
+                }else {
+                    layer.msg(e.info, {icon: 5});
+                }
+            })
+
+        });
+    });
+</script>
+</body>
+</html>

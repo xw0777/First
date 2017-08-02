@@ -1,0 +1,32 @@
+*{ margin: 0px; padding: 0px;}
+
+#l{ background-color: gray;height: 50px;}
+.m{
+    width: 200px; height: 50px; line-height: 50px;margin-left: 50px;float: left;
+}
+.i{
+    width: 100px; height: 50px;  line-height: 50px; float: right;
+}
+#s{ height: 180px; width: 1000px; margin: auto; background-color: wheat; border-radius: 0 0 50px 50px ;}
+.n,.n1{ height: 80px;width: 150px; float: left; margin-top: 100px; background-color: gray; font-size: 30px;
+line-height: 80px; text-align: center; border-radius: 50px;color: wheat; }
+.n1{margin-left: 20px;}
+#ff{width: 200px; height:100px; background-color: antiquewhite; border-radius: 2px;margin-top: 50px;margin-left: 450px;}
+#v{width: 1000px; margin: auto;}
+#u{width: 1000px; font-size: 50px; padding-left: 100px;margin-top: 20px; margin-bottom: 20px;}
+.o,.o img{
+    width: 500px;height: 354px; float: left;border-radius: 5px;
+}
+.p{ width:497px;height:116px; float: left; line-height: 118px; text-align: center; background-color:turquoise; margin-left: 3px;border-radius: 5px;}
+#x{ margin-top: 3px;}
+#w,.aa{ width: 1000px;font-size: 50px; height: 50px;float: left; margin-top: 20px; margin-bottom: 20px;}
+#y{width: 1000px;margin: auto;}
+.q{ width: 247px;height: 200px;float: left; }
+.q img{ width: 247px;height: 200px;float: left; border-radius: 5px;}
+#z{margin-left: 4px;}
+.r{width: 1000px; height: 50px; line-height: 50px; float: left;font-size: 30px;color: goldenrod; background-color: thistle;margin-top: 5px; border-radius: 10px;}
+.r span{padding-left: 50px; }
+#cc{width: 1000px; height: 80px; background-color: thistle;margin-top: 10px; border-radius: 10px; float: left}
+#bb{width:1000px;margin: auto; }
+#dd{margin-top: 15px; border-radius: 10px; font-size: 40px;margin-left: 15px;}
+#ee{ width:80px}

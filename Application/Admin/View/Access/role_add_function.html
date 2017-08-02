@@ -1,0 +1,116 @@
+<include file="Common/header"/>
+<body>
+<article class="page-container">
+    <form action="" method="post" class="form form-horizontal" id="form-admin-role-add">
+        <div class="row cl">
+            <label class="form-label col-xs-2 col-sm-1"></label>
+            <div class="formControls col-xs-9 col-sm-10">
+                <div class="panel panel-secondary">
+                    <volist name="list" id="v">
+                    <div class="panel-header"> {$v.f_name}</div>
+                    <div class="panel-body">
+
+                        <volist name="v.xj" id="vv">
+                        <div class="panel panel-default">
+                            <div class="panel-header">
+                                <input type="checkbox" <eq name="vv.select" value="1">checked</eq> data-module="{$v.id}" data-id="{$vv.id}" data-type="ctrl"> {$vv.f_name}
+                            </div>
+                            <div class="panel-body">
+
+                                <volist name="vv.xj" id="vvv">
+                                <input type="checkbox" <eq name="vvv.select" value="1">checked</eq> data-module="{$v.id}" data-id="{$vvv.id}" data-type="act"> {$vvv.f_name} &nbsp;
+                                </volist>
+
+                            </div>
+                        </div>
+                        </volist>
+
+                    </div>
+                    </volist>
+                </div>
+
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-2 col-sm-offset-1">
+                <button type="button" class="btn btn-primary" id="admin-role-save" name="admin-role-save">
+                    <i class="icon-ok"></i> 确定
+                </button>
+            </div>
+        </div>
+
+    </form>
+</article>
+
+<!--_footer 作为公共模版分离出去-->
+<include file="Common/js"/>
+<script type="text/javascript">
+    $(function () {
+
+        var id = "{$id}";
+
+        $('input').click(function () {
+            var i = $(this);
+            var type = i.attr('data-type');
+            var check = i.prop('checked');
+            if(type == 'ctrl')
+            {
+                if(check == true)
+                {
+                    i.parent().next().children().prop('checked',true);
+                }else {
+                    i.parent().next().children().prop('checked',false);
+                }
+            }
+            if(type == 'act')
+            {
+                if(check == true)
+                {
+                    i.parent().prev().children().prop('checked',true);
+                }else {
+                    var all_act = i.parent().children();
+                    var tmp = 0;
+                    all_act.each(function () {
+                        if($(this).prop('checked') == false)
+                        {
+                            tmp += 1;
+                        }
+                    });
+                    if(tmp == all_act.length)
+                    {
+                        i.parent().prev().children().prop('checked',false);
+                    }
+                }
+            }
+        });
+
+        $('#admin-role-save').click(function () {
+            var all = $('input');
+            var all_ids = [];
+            all.each(function(){
+                var i = $(this);
+                if(i.prop('checked') == true)
+                {
+                    all_ids.push(i.attr('data-id'));
+                    all_ids.push(i.attr('data-module'));
+                }
+            });
+            layer.load();
+            $.post('{:U("role_add_permission")}',{ids:all_ids.join(),id:id}, function (e) {
+                //console.log(e);
+               layer.closeAll('loading');
+                if(e.status)
+                {
+                    window.parent.location.reload();
+                }else {
+                    layer.msg(e.info, {icon: 5});
+                }
+
+            })
+
+        });
+
+    });
+</script>
+</body>
+</html>

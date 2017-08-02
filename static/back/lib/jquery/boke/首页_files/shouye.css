@@ -1,0 +1,9 @@
+#beijing{
+background-image: url('7.jpg');
+background-repeat: no-repeat;
+height: 500px;
+}
+#touxiang img{
+    width: 60px; border: 20px solid white; border-radius: 50px;
+    margin-top: 485px; margin-left: auto;margin-right: auto;
+}

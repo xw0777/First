@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎登录</title>
+    <meta name="keywords" content="">
+    <meta name="content" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <link type="text/css" rel="stylesheet" href="/JW/static/sign/css/login.css">
+    <style>
+        ::-webkit-input-placeholder { /* WebKit browsers */
+            font-size:12px;
+            color: #999;
+        }
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            font-size:12px;
+            color: #999;
+        }
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            font-size:12px;
+            color: #999;
+        }
+        :-ms-input-placeholder { /* Internet Explorer 10+ */
+            font-size:12px;
+            color: #999;
+        }
+        #form input{
+            background: none;
+        }
+        #form img {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="login_bj" >
+<div class="zhuce_body">
+    <div class="logo"></div>
+    <div class="zhuce_kong login_kuang">
+        <div class="zc">
+            <div class="bj_bai" style="height:300px">
+                <h3>登录</h3>
+                <form action="" method="post" id="form">
+                    <input name="username" type="text" class="kuang_txt" placeholder="手机号/邮箱/编号/身份证号">
+                    <input name="password" type="password" class="kuang_txt" placeholder="密码">
+                    <div style="padding: 0;margin: 0;">
+                    <input name="verify" style="margin-top: 0px;width:107px;height:35px" type="text" class="short_txt" placeholder="验证码">
+                    <img  style=" margin-left: 6px ;width:107px;height:40px"onclick="this.src=this.getAttribute('data-href')+'?'+Math.random();" data-href="{:U('Admin/Sign/verify')}" src="{:U('Admin/Sign/verify')}">
+                    </div>
+                    <div>
+                        <a href="#">忘记密码？</a><input name="" type="checkbox" value="" checked><span>记住我</span>
+                    </div>
+                    <button type="submit" class="btn_zhuce">登录</button>
+
+                </form>
+            </div>
+            <div class="bj_right" style="height:300px">
+                <p>使用以下账号直接登录</p>
+                <a href="#" class="zhuce_qq">QQ注册</a>
+                <a href="#" class="zhuce_wb">微博注册</a>
+                <a href="#" class="zhuce_wx">微信注册</a>
+                <p>已有账号？<a href="#">立即登录</a></p>
+
+            </div>
+        </div>
+        <p style="display: none;">本模板在此表示感谢</p>
+    </div>
+
+</div>
+
+</body>
+</html>

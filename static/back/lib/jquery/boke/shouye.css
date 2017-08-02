@@ -1,0 +1,33 @@
+#beijing{
+background-image: url('7.JPG');
+background-repeat: no-repeat;
+background-size: cover;
+height: 500px;position: absolute;left: 0px;top: 0px;
+}
+
+#touxiang img{
+    width: 60px; border: 20px solid white; border-radius: 50px;position: absolute;left: 575px;top: 450px;
+    margin: auto;
+}
+#liantu{
+margin-top: 600px; width: 1250px;margin-left: 10px;
+}
+#liantu div{
+    width: 410px; height: 340px;float: left; margin-top: 10px;font-size: 50px;
+}
+#liantu .a{
+    margin-left: 10px;
+}
+#shao{
+     width: 1250px;margin-left: 10px;height: 340px; margin-top:50px;
+}
+.c,.e{
+    width: 410px;height: 340px;float: left;margin-top: 50px;margin-left: 10px;font-size: 50px;
+}
+.d,#f{
+    width: 830px;height: 340px;margin-left: 10px;float: left;margin-top: 50px;margin-left: 10px;
+}
+
+.q{
+    text-align: right;
+}
